@@ -8,5 +8,5 @@
 
 **GY-61 ADXL335 ANALOG OUTPUT ACCELEROMETER**
 
-- [Accelerometer Onboard](https://github.com/balaji303/Arduino/blob/master/onboard.c)
+- [Accelerometer Onboard](https://github.com/balaji303/Arduino/blob/master/onboard.ino)
 - [Accelerometer Output](https://github.com/balaji303/Arduino/blob/master/acceleroonBreadboard.ino)
