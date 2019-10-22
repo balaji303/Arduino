@@ -10,3 +10,7 @@
 
 - [Accelerometer Onboard](https://github.com/balaji303/Arduino/blob/master/onboard.ino)
 - [Accelerometer Output](https://github.com/balaji303/Arduino/blob/master/acceleroonBreadboard.ino)
+
+**Analog Sound Sensor Microphone MIC Controller**
+
+- [Analog MIC triggering]()
