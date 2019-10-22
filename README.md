@@ -13,4 +13,5 @@
 
 **Analog Sound Sensor Microphone MIC Controller**
 
-- [Analog MIC triggering]()
+- [Analog MIC triggering](https://github.com/balaji303/Arduino/blob/master/AnalogMic.ino)
+
