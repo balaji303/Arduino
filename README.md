@@ -22,3 +22,7 @@
 **BMP180 sensor**
 
 - [Digital Pressure Sensor]()
+
+**TEA BAG SERVO**
+ 
+ - [Tea Bag Dipping motor](https://github.com/balaji303/Arduino/blob/master/Teabag.ino)
