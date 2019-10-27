@@ -26,3 +26,7 @@
 **TEA BAG SERVO**
  
  - [Tea Bag Dipping motor](https://github.com/balaji303/Arduino/blob/master/Teabag.ino)
+
+**Soil Moisture  sensor LM393**
+
+ - [Soil Moisture Sensor uses the LM393]()
