@@ -30,3 +30,7 @@
 **Soil Moisture  sensor LM393**
 
  - [Soil Moisture Sensor uses the LM393]( https://github.com/balaji303/Arduino/blob/master/Moisture%20sensor.ino )
+
+**Thermistor**
+
+- [Thermistor Temperature sensor](https://github.com/balaji303/Arduino/blob/master/Thermister.ino)
