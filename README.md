@@ -34,3 +34,4 @@
 **Thermistor**
 
 - [Thermistor Temperature sensor](https://github.com/balaji303/Arduino/blob/master/Thermister.ino)
+- [Thermistor code](https://github.com/balaji303/Arduino/blob/master/Thermister2.ino)
