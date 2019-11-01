@@ -39,5 +39,6 @@
 **Speaker**
 
 - [Speaker Song](https://github.com/balaji303/Arduino/blob/master/Speakersong.ino)
-
+- [Speaker Song 2](https://github.com/balaji303/Arduino/blob/master/Speakersong2.ino)
+- [Speaker Song 3](https://github.com/balaji303/Arduino/blob/master/Speakersong3.ino)
 
