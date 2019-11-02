@@ -45,4 +45,4 @@
 
 **BLYNK APP**
 
-- []()
+- [Servo Motor]()
