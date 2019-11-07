@@ -47,5 +47,6 @@
 
 **BLYNK APP**
 
-- [Servo Motor](https://github.com/balaji303/Arduino/blob/master/Blynkservo.ino)
+- [Servo Motor control](https://github.com/balaji303/Arduino/blob/master/Blynkservo.ino)
+
 
