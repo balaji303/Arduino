@@ -49,4 +49,6 @@
 
 - [Servo Motor control](https://github.com/balaji303/Arduino/blob/master/Blynkservo.ino)
 
+**Serial Print**
 
+- [Serial Print in Arduino](https://github.com/balaji303/Arduino/blob/master/SerialPrint.ino)
