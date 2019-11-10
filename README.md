@@ -51,4 +51,4 @@
 
 **Serial Print**
 
-- [Serial Print in Arduino](https://github.com/balaji303/Arduino/blob/master/SerialPrint.ino)
+- [Serial Print using Arduino](https://github.com/balaji303/Arduino/blob/master/SerialPrint.ino)
