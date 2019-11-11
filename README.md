@@ -54,3 +54,5 @@
 - [Serial Print using Arduino](https://github.com/balaji303/Arduino/blob/master/SerialPrint.ino)
 
 **Inter-Integrated Circuit**
+
+- [01 Master Write Slave Read (Master write)](https://github.com/balaji303/Arduino/blob/master/MasterWriteSlaveRead.ino)
