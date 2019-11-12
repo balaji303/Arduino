@@ -60,5 +60,5 @@
 - [01 Master Write Slave Read (Circuit Diagram)](https://github.com/balaji303/Arduino/blob/master/i2c.png)
 - [02 MAster Read Slave Write (Master code)]()
 - [02 Master Read Slave Write (Slave code)]()
-- [02 Master Read Slave Write (Circuit Diagram)]()
+- [02 Master Read Slave Write (Circuit Diagram)](https://github.com/balaji303/Arduino/blob/master/i2c.png)
 
