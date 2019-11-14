@@ -2,7 +2,7 @@
 //address 5
 #include <Wire.h>
 void setup() {
-  // put your setup code here, to run once:
+  // put your setup code here, to run once
 Wire.begin(5);
 pinMode(13,OUTPUT);
 digitalWrite(13,LOW);
