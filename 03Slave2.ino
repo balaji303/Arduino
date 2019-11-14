@@ -1,4 +1,4 @@
-//03- Slave 1
+//03- Slave 2
 //address 10
 #include <Wire.h>
 void setup() {
