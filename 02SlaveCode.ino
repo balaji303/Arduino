@@ -1,6 +1,6 @@
 #include <Wire.h>
 void setup() {
-  // put your setup code here, to run once:
+  // put your setup code here, to run once
 Serial.begin(9600);
 Wire.begin(10);
 pinMode(13,OUTPUT);
