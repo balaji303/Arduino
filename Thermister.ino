@@ -2,7 +2,7 @@
 #define g 6
 #define w 7
 void setup() {
-  // put your setup code here, to run once:
+  // put your setup co
 Serial.begin(9600);
 pinMode(r,OUTPUT);
 pinMode(g,OUTPUT);
