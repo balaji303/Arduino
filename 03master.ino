@@ -1,3 +1,4 @@
+//Function Call
 #include <Wire.h>
 void high(int add)
 {
