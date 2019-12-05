@@ -1,6 +1,6 @@
 int n;
 void setup() {
-  // put   code 
+  //    code 
  Serial.begin(9600);
  pinMode(03,OUTPUT);
  pinMode(02,OUTPUT);
