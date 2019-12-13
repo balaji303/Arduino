@@ -2,7 +2,7 @@
 #define G 10
 #define B 11
 void setup() {
-  // put your setup code here, to run once:
+  // put your setup code here, to run 
  pinMode(G,OUTPUT);
  pinMode(R,OUTPUT);
  pinMode(B,OUTPUT);
