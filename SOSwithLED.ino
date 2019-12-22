@@ -10,7 +10,6 @@ void setup() {
 }
 
 void loop() {
-  // put 
  small();
  small();
  small();
