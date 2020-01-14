@@ -55,7 +55,7 @@
 **Inter-Integrated Circuit I2C**
 
 - [01 Master Write Slave Read (Master code)](https://github.com/balaji303/Arduino/blob/master/Protocol/Inter-Integrated%20Circuit%20I2C/01/Master.ino)
-- [01 Master Write Slave Read (Slave code)](https://github.com/balaji303/Arduino/blob/
+- [01 Master Write Slave Read (Slave code)]()
 - [01 Master Write Slave Read (Circuit Diagram)](https://github.com/balaji303/Arduino/blob/master/i2c.png)
 - [02 MAster Read Slave Write (Master code)](https://github.com/balaji303/Arduino/blob/master/ReadSlaveWrite.ino)
 - [02 Master Read Slave Write (Slave code)](https://github.com/balaji303/Arduino/blob/master/02SlaveCode.ino)
