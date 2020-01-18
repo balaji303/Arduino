@@ -1,4 +1,4 @@
-int n;
+int n;                              //Global variable
 void setup() {
  Serial.begin(9600);
  pinMode(03,OUTPUT);
