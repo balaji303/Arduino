@@ -2,7 +2,7 @@
 int a=511;
 int value;
 
-void fun(){ //function program
+void fun(){ //function 
 value=EEPROM.read(a);
 Serial.print(a);
 Serial.print(":");
