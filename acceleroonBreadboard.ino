@@ -1,4 +1,4 @@
-int X_axis = A3;
+int X_axis = A3; //Global variable
 
 int Y_axis = A2;
 
