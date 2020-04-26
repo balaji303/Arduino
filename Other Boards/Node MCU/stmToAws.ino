@@ -7,8 +7,8 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "Yazhini";
-const char* password = "yamini@g902";
+const char* ssid = "Balaji";
+const char* password = "Password";
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org");
