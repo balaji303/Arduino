@@ -8,7 +8,7 @@ void setup() {
   // put your setup code here, to run once:
 pinMode(2,INPUT);             //Button is connected here
 pinMode(13,OUTPUT);           //In-built LED is connected here
-attachInterrupt(digitalPinToInterrupt(2),InSR,FALLING); //When PIN 2(button) goes from High to Low i.e., falling interrupt
+attachInterrupt(digitalPinToInterrupt(2),InSR,FALLING); //When PIN 2(button) goes from High to Low i.e., falling interrupt it calls InSR function
 }
 
 void loop() {
