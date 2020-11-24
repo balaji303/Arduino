@@ -1,5 +1,5 @@
   uint8_t resetpin=12;
-  uint8_t rwpin=255;
+  uint8_t rwpin=0; //LOW: Write and HIGH: Read
   uint8_t enablepin=11;
   uint8_t datapins[4]={5,4,3,2};
   uint8_t lcdfunction=0x04;
