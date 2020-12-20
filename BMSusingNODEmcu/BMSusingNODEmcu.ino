@@ -14,7 +14,7 @@ HTTPClient http;
 void setup()
 {
     WiFi.disconnect();
-   WiFi.begin("Thanushiya","krithi202003");
+   WiFi.begin("wifiUSERname","wifiPASSword");
   while ((!(WiFi.status() == WL_CONNECTED))){
     delay(300);
 
@@ -30,7 +30,7 @@ volt=map(volt,0,1024,0,12);
     if (client.connect("api.thingspeak.com",80)) {
       request_string = thingSpeakAddress;
       request_string += "key=";
-      request_string += "5O5I97N93C4RO1E2";
+      request_string += "YOUR_KEY_HERE";
       request_string += "&";
       request_string += "field2";
       request_string += "=";
