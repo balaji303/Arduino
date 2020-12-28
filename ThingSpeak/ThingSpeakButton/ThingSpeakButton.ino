@@ -1,8 +1,3 @@
-/////////////////////////////////
-// Generated with a lot of love//
-// with TUNIOT FOR ESP8266     //
-// Website: Easycoding.tn      //
-/////////////////////////////////
 #include <ESP8266WiFi.h>
 
 #include <ESP8266HTTPClient.h>
