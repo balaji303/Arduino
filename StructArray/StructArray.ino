@@ -10,9 +10,11 @@
 #include <queue.h>
 
 struct Arduino{
-  int pin[2];
-  int ReadValue[2];
+  int pin[3];
+  int ReadValue1;
+  int ReadValue2;
 };
+
 void Blink(void *param);
 void POT1(void *param);
 void POT2(void *param);
@@ -21,7 +23,7 @@ QueueHandle_t structArrayQueue;
 void setup() {
   // put your setup code here, to run once:
 structArrayQueue=xQueueCreate(10,sizeof(struct Arduino));
-if(structQueue!=NULL){
+if(structArrayQueue!=NULL){
   xTaskCreate(Blink,
               "TaskLED",
               128,
@@ -63,5 +65,51 @@ void Blink(void *param){
     vTaskDelay(250/portTICK_PERIOD_MS);
     digitalWrite(13,LOW);
     vTaskDelay(250/portTICK_PERIOD_MS);
+  }
+}
+
+void POT1(void *param){
+  (void) param;
+  pinMode(A0,INPUT);
+  while(1){
+  struct Arduino var;
+  var.pin[0]=0;
+  var.ReadValue1=analogRead(A0);
+  
+  xQueueSend(structArrayQueue,&var,portMAX_DELAY);
+  vTaskDelay(1);
+  }
+}
+
+void POT2(void *param){
+  (void) param;
+  pinMode(A1,INPUT);
+  while(1){
+  struct Arduino var;
+  var.pin[1]=1;
+  var.ReadValue2=analogRead(A1);
+  
+  xQueueSend(structArrayQueue,&var,portMAX_DELAY);
+  vTaskDelay(1);
+  }
+}
+
+void PrintSerial(void *param){
+  (void) param;
+  Serial.begin(9600);
+  while(1){
+    struct Arduino var;
+    if(xQueueReceive(structArrayQueue,&var,portMAX_DELAY) == pdPASS ){
+      Serial.print("PIN:");
+      Serial.println(var.pin[1]);
+      Serial.print("value:");
+      Serial.println(var.ReadValue1);
+      Serial.print("PIN:");
+      Serial.println("1");
+      Serial.print("value:");
+      Serial.println(var.ReadValue2);
+    }
+//   }
+    vTaskDelay(500/portTICK_PERIOD_MS);
   }
 }
