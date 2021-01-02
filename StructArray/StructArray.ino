@@ -53,3 +53,15 @@ void loop() {
   // put your main code here, to run repeatedly:
   //Do nothing
 }
+
+void Blink(void *param){
+  (void) param;
+  pinMode(13,OUTPUT);
+  digitalWrite(13,LOW);
+  while(1){
+    digitalWrite(13,HIGH);
+    vTaskDelay(250/portTICK_PERIOD_MS);
+    digitalWrite(13,LOW);
+    vTaskDelay(250/portTICK_PERIOD_MS);
+  }
+}
