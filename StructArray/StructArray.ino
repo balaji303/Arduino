@@ -9,58 +9,75 @@
 // Include queue support
 #include <queue.h>
 
+// Define a Structure Array
 struct Arduino{
-  int pin[3];
-  int ReadValue1;
-  int ReadValue2;
+  int pin[2];
+  int ReadValue[2];
 };
 
-void Blink(void *param);
-void POT1(void *param);
-void POT2(void *param);
-void PrintSerial(void *param);
+//Function Declaration
+void Blink(void *pvParameters);
+void POT(void *pvParameters);
+void TaskSerial(void *pvParameters);
+
+/* 
+ * Declaring a global variable of type QueueHandle_t 
+ * 
+ */
 QueueHandle_t structArrayQueue;
+
 void setup() {
-  // put your setup code here, to run once:
-structArrayQueue=xQueueCreate(10,sizeof(struct Arduino));
+
+  /**
+   * Create a queue.
+   * https://www.freertos.org/a00116.html
+   */
+structArrayQueue=xQueueCreate(10, //Queue length
+                              sizeof(struct Arduino)); //Queue item size
+                              
 if(structArrayQueue!=NULL){
-  xTaskCreate(Blink,
-              "TaskLED",
-              128,
+
+  
+  xTaskCreate(TaskBlink,  // Task function
+              "Blink",// Task name
+              128,// Stack size 
               NULL,
-              2,
+              0,// Priority
               NULL);
-  xTaskCreate(POT1,
-              "AnalogRead1",
-              128,
+ 
+ // Create other task that publish data in the queue if it was created.
+  xTaskCreate(POT,// Task function
+              "AnalogRead",// Task name
+              128,  // Stack size
               NULL,
-              2,
+              2,// Priority
               NULL);
-   xTaskCreate(POT2,
-              "AnalogRead2",
-              128,
+
+   // Create task that consumes the queue if it was created.
+   xTaskCreate(TaskSerial,// Task function
+              "PrintSerial",// A name just for humans
+              128,// This stack size can be checked & adjusted by reading the Stack Highwater
               NULL,
-              2,
-              NULL);
-   xTaskCreate(PrintSerial,
-              "PrintSerial",
-              128,
-              NULL,
-              1,
+              1, // Priority, with 3 (configMAX_PRIORITIES - 1) being the highest, and 0 being the lowest.
               NULL);
 }
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  //Do nothing
-}
+void loop() {}
 
-void Blink(void *param){
-  (void) param;
+/* 
+ * Blink task. 
+ * See Blink_AnalogRead example. 
+ */
+void TaskBlink(void *pvParameters){
+  (void) pvParameters;
+  
   pinMode(13,OUTPUT);
+  
   digitalWrite(13,LOW);
-  while(1){
+  
+  for(;;)
+  {
     digitalWrite(13,HIGH);
     vTaskDelay(250/portTICK_PERIOD_MS);
     digitalWrite(13,LOW);
@@ -68,48 +85,66 @@ void Blink(void *param){
   }
 }
 
-void POT1(void *param){
-  (void) param;
+/**
+ * Analog read task for Pin A0 and A1
+ * Reads an analog input on pin 0 and pin 1 
+ * Send the readed value through the queue.
+ * See Blink_AnalogRead example.
+ */
+void POT(void *pvParameters){
+  (void) pvParameters;
   pinMode(A0,INPUT);
-  while(1){
-  struct Arduino var;
-  var.pin[0]=0;
-  var.ReadValue1=analogRead(A0);
-  
-  xQueueSend(structArrayQueue,&var,portMAX_DELAY);
-  vTaskDelay(1);
-  }
-}
-
-void POT2(void *param){
-  (void) param;
   pinMode(A1,INPUT);
-  while(1){
-  struct Arduino var;
-  var.pin[1]=1;
-  var.ReadValue2=analogRead(A1);
-  
-  xQueueSend(structArrayQueue,&var,portMAX_DELAY);
+  for (;;){
+  // Read the input on analog pin 0:
+  struct Arduino currentVariable;
+  currentVariable.pin[0]=0;
+  currentVariable.pin[1]=1;
+  currentVariable.ReadValue[0]=analogRead(A0);
+  currentVariable.ReadValue[1]=analogRead(A1);  
+
+  /**
+    * Post an item on a queue.
+    * https://www.freertos.org/a00117.html
+    */
+  xQueueSend(structArrayQueue,&currentVariable,portMAX_DELAY);
+
+  // One tick delay (15ms) in between reads for stability
   vTaskDelay(1);
   }
 }
 
-void PrintSerial(void *param){
-  (void) param;
+/**
+ * Serial task.
+ * Prints the received items from the queue to the serial monitor.
+ */
+void TaskSerial(void *pvParameters){
+  (void) pvParameters;
+
+  // Init Arduino serial
   Serial.begin(9600);
-  while(1){
-    struct Arduino var;
-    if(xQueueReceive(structArrayQueue,&var,portMAX_DELAY) == pdPASS ){
+
+  // Wait for serial port to connect. Needed for native USB, on LEONARDO, MICRO, YUN, and other 32u4 based boards.
+  while (!Serial) {
+    vTaskDelay(1);
+  }
+  
+  for (;;){
+    
+    struct Arduino currentVariable;
+
+   /**
+     * Read an item from a queue.
+     * https://www.freertos.org/a00118.html
+     */
+    if(xQueueReceive(structArrayQueue,&currentVariable,portMAX_DELAY) == pdPASS ){
+      for(int i=0;i<2;i++){
       Serial.print("PIN:");
-      Serial.println(var.pin[1]);
+      Serial.println(currentVariable.pin[i]);
       Serial.print("value:");
-      Serial.println(var.ReadValue1);
-      Serial.print("PIN:");
-      Serial.println("1");
-      Serial.print("value:");
-      Serial.println(var.ReadValue2);
+      Serial.println(currentVariable.ReadValue[i]);
+      }
     }
-//   }
     vTaskDelay(500/portTICK_PERIOD_MS);
   }
 }
