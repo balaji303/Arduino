@@ -57,7 +57,7 @@ All these programs are written in Arduino IDE
 
 - [Serial Print using Arduino](https://github.com/balaji303/Arduino/blob/master/SerialPrint.ino)
 
-**Inter-Integrated Circuit I2C**
+**Inter-Integrated Circuit or I2C**
 
 - [01 Master Write Slave Read (Master code)](https://github.com/balaji303/Arduino/blob/master/Protocol/Inter-Integrated%20Circuit%20I2C/01/Master.ino)
 - [01 Master Write Slave Read (Slave code)]()
