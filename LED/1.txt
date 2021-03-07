@@ -1,0 +1,70 @@
+#include "LedControl.h"
+
+LedControl lc=LedControl(12,10,11,1);
+unsigned long delaytime=500;
+
+void setup() 
+  {
+  lc.shutdown(0,false);
+  lc.setIntensity(0,8);
+  lc.clearDisplay(0);
+  }
+void writeOnMatrix()
+  {
+  byte J[5]={B00000110,B00000001,B00000001,B00000001,B11111110};
+  byte A[5]={B01111111,B10001000,B10001000,B10001000,B01111111};	
+  byte M[5]={B11111100,B01000000,B00100000,B01000000,B11111100};
+  byte E[5]={B11111110,B10010010,B10010010,B10010010,B00000000};
+  byte C[5]={B01111110,B10000001,B10000001,B10000001,B01000010};
+  byte O[5]={B01111110,B10000001,B10000001,B10000001,B01111110};
+  /* now display them one by one with a small delay */
+  lc.setRow(0,0,J[0]);
+  lc.setRow(0,1,J[1]);
+  lc.setRow(0,2,J[2]);
+  lc.setRow(0,3,J[3]);
+  lc.setRow(0,4,J[4]);
+  delay(delaytime);
+  lc.setRow(0,0,A[0]);
+  lc.setRow(0,1,A[1]);
+  lc.setRow(0,2,A[2]);
+  lc.setRow(0,3,A[3]);
+  lc.setRow(0,4,A[4]);
+  delay(delaytime);
+  lc.setRow(0,0,M[0]);
+  lc.setRow(0,1,M[1]);
+  lc.setRow(0,2,M[2]);
+  lc.setRow(0,3,M[3]);
+  lc.setRow(0,4,M[4]);
+  delay(delaytime);
+  lc.setRow(0,0,E[0]);
+  lc.setRow(0,1,E[1]);
+  lc.setRow(0,2,E[2]);
+  lc.setRow(0,3,E[3]);
+  lc.setRow(0,4,E[4]);
+  delay(delaytime);
+  lc.setRow(0,0,C[0]);
+  lc.setRow(0,1,C[1]);
+  lc.setRow(0,2,C[2]);
+  lc.setRow(0,3,C[3]);
+  lc.setRow(0,4,C[4]);
+  delay(delaytime);
+  lc.setRow(0,0,O[0]);
+  lc.setRow(0,1,O[1]);
+  lc.setRow(0,2,O[2]);
+  lc.setRow(0,3,O[3]);
+  lc.setRow(0,4,O[4]);
+  delay(delaytime);
+  lc.setRow(0,0,0);
+  lc.setRow(0,1,0);
+  lc.setRow(0,2,0);
+  lc.setRow(0,3,0);
+  lc.setRow(0,4,0);
+  delay(delaytime);
+  }
+
+void loop() 
+  {
+  lc.setIntensity(0,8);
+  writeOnMatrix();
+  delay(200);
+  }
