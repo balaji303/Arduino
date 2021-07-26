@@ -1,0 +1,51 @@
+Color detection Project
+11:26:52.921 -> Searching Sensor...
+11:26:53.016 -> Sensor Conformation may take few minutes
+11:26:53.373 -> Color Sensor Found
+11:26:53.493 -> R: 131	G: 65	B: 58	red
+11:26:56.601 -> R: 69	G: 81	B: 99	blue
+11:26:59.733 -> R: 74	G: 102	B: 73	green
+11:27:02.833 -> R: 111	G: 90	B: 50	yellow
+
+
+
+11:32:09.677 -> Color detection Project
+11:32:09.852 -> Searching Sensor...
+11:32:09.960 -> Sensor Conformation may take few minutes
+11:32:10.293 -> Color Sensor Found
+11:32:10.418 -> R: 127	G: 68	B: 60	red
+11:32:13.511 -> R: 72	G: 82	B: 98	blue
+11:32:16.632 -> R: 78	G: 98	B: 74	green
+11:32:19.753 -> R: 108	G: 89	B: 50	yellow
+
+
+
+
+11:37:41.054 -> Color detection Project
+11:37:41.235 -> Searching Sensor...
+11:37:41.319 -> Sensor Conformation may take few minutes
+11:37:41.704 -> Color Sensor Found
+11:37:41.804 -> R: 83	G: 85	B: 81	white
+11:37:44.921 -> R: 128	G: 69	B: 61	red
+11:37:48.053 -> R: 77	G: 85	B: 97	blue
+11:37:51.171 -> R: 90	G: 569	B: 417	green
+11:37:54.270 -> R: 109	G: 90	B: 51	yellow
+11:37:57.404 -> R: 102	G: 76	B: 79	violet
+11:38:00.494 -> R: 79	G: 92	B: 90	sky blue
+11:38:03.613 -> R: 96	G: 85	B: 71	black
+
+
+
+11:42:28.931 -> Color detection Project
+11:42:29.094 -> Searching Sensor...
+11:42:29.209 -> Sensor Conformation may take few minutes
+11:42:29.559 -> Color Sensor Found
+11:42:29.688 -> R: 83	G: 86	B: 79	white
+11:42:33.815 -> R: 123	G: 75	B: 67	red
+11:42:37.927 -> R: 74	G: 83	B: 98	blue
+11:42:42.029 -> R: 78	G: 100	B: 74	green
+11:42:46.131 -> R: 112	G: 93	B: 56	yellow
+11:42:50.239 -> R: 104	G: 77	B: 79	violet
+11:42:54.378 -> R: 75	G: 89	B: 88	skyblue
+11:42:58.485 -> R: 96	G: 85	B: 72	black
+	

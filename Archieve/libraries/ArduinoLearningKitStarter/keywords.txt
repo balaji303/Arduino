@@ -1,0 +1,19 @@
+###########################################
+# Syntax Coloring Map For ALKS
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+ALKS	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+setupLeds	KEYWORD2
+setupRgbLed	KEYWORD2
+setupButtons	KEYWORD2
+setupPiezo	KEYWORD2
+setupAll	KEYWORD2
